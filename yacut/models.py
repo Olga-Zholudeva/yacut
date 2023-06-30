@@ -2,7 +2,7 @@ from datetime import datetime as dt
 
 from flask import url_for
 
-from . import db, views
+from . import db
 
 
 class URLMap(db.Model):
