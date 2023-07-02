@@ -38,10 +38,9 @@ def yacut_view():
 def redirect_view(short):
     """Перенаправляем на страницу полной ссылки."""
 
-    urlmap = URLMap.query.filter_by(short=short).first()
+    urlmap = URLMap.query.filter_by(short=short).first_or_404()
     if urlmap:
         return redirect(urlmap.original)
-    abort(404)
 
 
 def get_unique_short_id():
